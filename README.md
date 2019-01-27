@@ -21,53 +21,50 @@ Please join us on the following channels:
 ## Features
 |   **Feature**    |                    **Description**                    |   **Status**    |
 |------------------|-------------------------------------------------------|-----------------|
-|   Home Screen    | Show status and version of PSLab device               |  		 ✓       |
-|   Instruments    | Exposes PSLab instruments like Oscilloscope, etc      | 		 ✓       |
-|  Oscilloscope    | Shows variation of analog signals                     | 		 ✓       |
-|   Multimeter     | Measures voltage, current, resistance and capacitance | 		 ✓       |
-| Logical Analyzer | Captures and displays signals from digital system     | 		 ✓       |
-|  Wave Generator  | Generates arbitrary analog and digital waveforms      | 		 ✓       |
-|   Power Source   | Generates programmable voltage and currents	       | 		 ✓       |
-|    Lux Meter     | Measures the ambient light intensity                  | 		 ✓       |
+|   Home Screen    | Show status and version of PSLab device               |  		 TBD       |
+|   Instruments    | Exposes PSLab instruments like Oscilloscope, etc      | 		 TBD       |
+|  Oscilloscope    | Shows variation of analog signals                     | 		 TBD       |
+|   Multimeter     | Measures voltage, current, resistance and capacitance | 		 TBD       |
+| Logical Analyzer | Captures and displays signals from digital system     | 		 TBD       |
+|  Wave Generator  | Generates arbitrary analog and digital waveforms      | 		 TBD       |
+|   Power Source   | Generates programmable voltage and currents	   | 		 TBD       |
+|    Lux Meter     | Measures the ambient light intensity                  | 		 TBD       |
 
+# How to set up the iOS app in your development environment
 
-## How to set up the iOS app in your development environment
+### Requirements
 
-  Minimum iOS version 4.1 (API Level 16)
-  
-  Maximum iOS version 8.1 (API Level 27)
+- iOS 12.0+
+- Xcode 10.0+
 
 ### Development Setup
 
-Before you begin, you should already have the Android Studio SDK downloaded and set up correctly. You can find a guide on how to do this here: [Setting up Android Studio](http://developer.android.com/sdk/installing/index.html?pkg=studio)
+Before you begin, you should already have the Xcode downloaded and set up correctly. You can find a guide on how to do this here: [Setting up Xcode](https://developer.apple.com/xcode/)
+
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Steps to install Cocoapods (one time installation)
+
+- Run `sudo gem install cocoapods` to install the latest version of cocoapods. To install cocoapods from HomeBrew, `brew install cocoapods`.
+
+-  Next, run `pod setup` for setting up cocoapods master repo. You may include `--verbose` for more descriptive logs.
+**NOTE:** This might take a while to setup depending on your network speed.
 
 ### Setting up the iOS Project
 
-1. Download the _pslab-iOS project source. You can do this either by forking and cloning the repository (recommended if you plan on pushing changes) or by downloading it as a ZIP file and extracting it.
+1. Download the _pslab-iOS_ project source. You can do this either by forking and cloning the repository (recommended if you plan on pushing changes) or by downloading it as a ZIP file and extracting it. OR
+```
+$ git clone https://github.com/fossasia/pslab-iOS.git
+```
 
-2. Open Android Studio, you will see a **Welcome to iOS** window. Under Quick Start, select _Import Project (Eclipse ADT, Gradle, etc.)_
+2. Navigate to the unzipped folder and run `pod install`.
 
-3. Navigate to the directory where you saved the pslab-android project, select the "pslab-android" folder, and hit OK. Android Studio should now begin building the project with Gradle.
+3. Open `Pslab.xcworkspace` from the folder.
 
-4. Once this process is complete and Android Studio opens, check the Console for any build errors.
+4. Build the project (⌘+B) and check for any errors.
 
-  - _Note:_ If you receive a Gradle sync error titled, "failed to find ...", you should click on the link below the error message (if available) that says _Install missing platform(s) and sync project_ and allow Android studio to fetch you what is missing.
-
-5. Once all build errors have been resolved, you should be all set to build the app and test it.
-
-6. To Build the app, go to _Build>Make Project_ (or alternatively press the Make Project icon in the toolbar).
-
-7. If the app was built successfully, you can test it by running it on either a real device or an emulated one by going to _Run>Run 'app'_ or pressing the Run icon in the toolbar.
-
-If you want build apk only, go to Build>Build apk and apk would be build and directory where apk is generated would be prompted by Android Studio.
-
-You can't debug the usual way as PSLab device is connected to micro-USB port through OTG cable. So Android Device is not connected to PC through USB cable.
-
-Note :
-1. If you built your own hardware, change VendorID and/or ProductID in [CommunicationHandler.java](https://github.com/fossasia/pslab-android/blob/master/app/src/main/java/org/fossasia/pslab/communication/CommunicationHandler.java)
+5. Run the app (⌘+R).and test it.
 
 ## Setup to use PSLab with iOS App
-To use PSLab device with iOS, you simply need an OTG cable, an iOS Device with USB Host feature enabled ( most modern phones have OTG support ) and PSLab Android App. Connect PSLab device to iOS Phone via OTG cable. Rest is handled by App itself.
+To use PSLab device with iOS, you need to have the Apple Lightning connector. Connect PSLab device to iOS Phone via Lightning connector. Rest is handled by App itself.
 
 ## Contributions Best Practices
 
@@ -92,7 +89,7 @@ Despite any reason, follow the steps given below to squash all commits into one 
 
  * Setup remote to upstream branch if not set before;
 
-`$ git remote add upstream https://github.com/fossasia/pslab-android.git`
+`$ git remote add upstream https://github.com/fossasia/pslab-iOS.git`
 
  * Check into the branch related to the pull request
 
@@ -125,18 +122,11 @@ We have the following branches
  * **master**
    This contains the stable code. After significant features/bugfixes are accumulated on development, we move it to master.
 
- * **apk**
-   This branch contains automatically generated apk file for testing.
-
 
 ### Code style
 
-Please try to follow the mentioned guidelines while writing and submitting your code as it makes easier for the reviewer and other developers to understand.
-
- * While naming the layout files, ensure that the convention followed is (activity/fragment) _ (name).xml like ```activity_oscilloscope.xml``` , ```fragment_control_main.xml``` .
- * Name the views and widgets defined in the layout files as (viewtype/widget) _ (fragment/activity name) _ (no. in the file) like ```spinner_channel_select_la1``` , ```button_activity_oscilloscope1``` .
- * The activity/fragment file name corresponding to the layout files should be named as                       (activity/fragment name)(activity/fragment).java like ```ChannelsParameterFragment.java``` corresponding to the layout file ```fragment_channels_parameter.xml``` .
- * The corresponding widgets for buttons, textboxes, checkboxes etc. in activity files should be named as (viewtype/widget)(fragment/activity name)(no. in the file) like ```spinnerChannelSelect1``` corresponding to ```spinner_channel_select1``` .
+* Please follow the guides and code standards: [Swift Style Guide](https://google.github.io/swift/)
+* Please follow the good iOS development practices: [iOS Good Practices](https://github.com/futurice/ios-good-practices)
 
 ## License
 

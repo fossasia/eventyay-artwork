@@ -1,5 +1,7 @@
 # PSLab iOS
 
+Repository for the PSLab iOS App for performing experiments with the [Pocket Science Lab](https://pslab.io) open-hardware platform. 
+
 [![Build Status](https://travis-ci.org/fossasia/pslab-iOS.svg?branch=development)](https://travis-ci.org/fossasia/pslab-iOS)
 [![Gitter](https://badges.gitter.im/fossasia/pslab.svg)](https://gitter.im/fossasia/pslab?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/dd728d91bb5743ff916c16c1251f8dd5)](https://www.codacy.com/app/praveenkumar103/pslab-iOS?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fossasia/pslab-iOS&amp;utm_campaign=Badge_Grade)
@@ -8,11 +10,15 @@
 
 This repository holds the iOS App for performing experiments with [PSLab](https://pslab.io/). PSLab is a tiny pocket science lab that provides an array of equipment for doing science and engineering experiments. It can function like an oscilloscope, waveform generator, frequency counter, programmable voltage and current source and also as a data logger. Our website is at https://pslab.io
 
+## Buy
+
+* You can get a Pocket Science Lab device from the [FOSSASIA Shop](https://fossasia.com).
+* More resellers are listed on the [PSLab website](https://pslab.io/shop/).
+
 ## Communication
 
-Please join us on the following channels:
-* [Pocket Science Channel](https://gitter.im/fossasia/pslab)
-* [Mailing List](https://groups.google.com/forum/#!forum/pslab-fossasia)
+* The PSLab [chat channel is on Gitter](https://gitter.im/fossasia/pslab).
+* Please also join us on the [PSLab Mailing List](https://groups.google.com/forum/#!forum/pslab-fossasia).
 
 ## Roadmap
  - [x] First we need to get communication between Android App and PSLab working.
@@ -20,16 +26,16 @@ Please join us on the following channels:
  - [ ] Implement Functionality to Perform Experiment using PSLab Hardware Device.
 
 ## Features
-|   **Feature**    |                    **Description**                    |   **Status**    |
-|------------------|-------------------------------------------------------|-----------------|
-|   Home Screen    | Show status and version of PSLab device               |  		 TBD       |
-|   Instruments    | Exposes PSLab instruments like Oscilloscope, etc      | 		 TBD       |
-|  Oscilloscope    | Shows variation of analog signals                     | 		 TBD       |
-|   Multimeter     | Measures voltage, current, resistance and capacitance | 		 TBD       |
-| Logical Analyzer | Captures and displays signals from digital system     | 		 TBD       |
-|  Wave Generator  | Generates arbitrary analog and digital waveforms      | 		 TBD       |
-|   Power Source   | Generates programmable voltage and currents	   | 		 TBD       |
-|    Lux Meter     | Measures the ambient light intensity                  | 		 TBD       |
+|   **Feature**    |                    **Description**                        |  	 **Status**   			  |
+|------------------|-----------------------------------------------------------|------------------------------------------|
+|   Home Screen    | Show status and version of PSLab device                   |  	:negative_squared_cross_mark:      |
+|   Instruments    | Exposes PSLab instruments like Oscilloscope, etc          | 	:negative_squared_cross_mark:      |
+|  Oscilloscope    | Shows variation of analog signals                         | 	:negative_squared_cross_mark:      |
+|   Multimeter     | Measures voltage, current, resistance and capacitance     | 	:negative_squared_cross_mark:      |
+| Logical Analyzer | Captures and displays signals from digital system         | 	:negative_squared_cross_mark:      |
+|  Wave Generator  | Generates arbitrary analog and digital waveforms          | 	:negative_squared_cross_mark:      |
+|   Power Source   | Generates programmable voltage and currents	       | 	:negative_squared_cross_mark:      |
+|    Lux Meter     | Measures the ambient light intensity                      | 	:negative_squared_cross_mark:      |
 
 # How to set up the iOS app in your development environment
 
